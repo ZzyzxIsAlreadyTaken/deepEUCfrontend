@@ -20,7 +20,7 @@ const ModelSelector = ({
   ];
 
   return (
-    <div className="w-[42rem] mx-auto p-4 flex gap-4 justify-center border-t border-gray-200">
+    <div className="w-[42rem] mx-auto p-4 flex gap-4 justify-center">
       {models.map((model) => (
         <label key={model.id} className="inline-flex items-center">
           <input

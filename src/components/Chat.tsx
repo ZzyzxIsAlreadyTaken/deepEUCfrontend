@@ -108,7 +108,7 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
   };
 
   return (
-    <div className="h-screen flex flex-col relative">
+    <div className="flex flex-col relative">
       <div className="flex-1 overflow-auto p-4 mb-[140px]">
         <div className="w-[42rem] mx-auto">
           {chatHistory.map((message) => (
@@ -152,7 +152,7 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
         />
         <form
           onSubmit={handleSubmit}
-          className="mx-auto w-[42rem] p-4 flex gap-4 border-t border-gray-300"
+          className="mx-auto w-[42rem] p-4 flex gap-4"
         >
           <input
             className="flex-grow p-4 text-lg border border-gray-300 rounded-lg placeholder:text-gray-400"
