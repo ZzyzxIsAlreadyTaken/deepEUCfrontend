@@ -137,10 +137,15 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
             </div>
           ))}
           {loading && (
-            <div className="flex justify-center items-center min-h-[60vh]">
-              <p className="text-gray-500">
-                {loadingMessages[loadingMessage]} ({seconds}s)
-              </p>
+            <div className="my-4">
+              <div className="bg-blue-50 border border-blue-200 text-blue-900 rounded-lg p-4 shadow max-w-[80%]">
+                <div className="text-xs opacity-50 mb-1">
+                  {new Date().toLocaleTimeString()} - {currentModel}
+                </div>
+                <p>
+                  {loadingMessages[loadingMessage]} ({seconds}s)
+                </p>
+              </div>
             </div>
           )}
         </div>
