@@ -16,7 +16,12 @@ const ModelSelector = ({
 }: ModelSelectorProps) => {
   const models: Model[] = [
     { id: "deepseek", name: "DeepSeek" },
-    { id: "gemini", name: "Gemini" },
+    {
+      id: "gemini-2.0-flash-lite-preview-02-05",
+      name: "Gemini 2.0 Flash lite",
+    },
+    { id: "gemini-1.5-flash", name: "Gemini 1.5 Flash" },
+    { id: "gemini-2.0-flash", name: "Gemini 2.0 Flash" },
   ];
 
   return (
