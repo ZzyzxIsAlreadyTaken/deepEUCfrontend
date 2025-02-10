@@ -25,18 +25,30 @@ const ModelSelector = ({
   ];
 
   return (
-    <div className="w-[42rem] mx-auto p-4 flex gap-4 justify-center">
+    <div className="w-[64rem] mx-auto p-4 flex gap-4 justify-center">
       {models.map((model) => (
-        <label key={model.id} className="inline-flex items-center">
-          <input
-            type="radio"
-            name="model"
-            value={model.id}
-            checked={selectedModel === model.id}
-            onChange={(e) => onModelChange(e.target.value as ModelType)}
-            className="form-radio h-4 w-4 text-sky-500"
-          />
-          <span className="ml-2">{model.name}</span>
+        <label
+          key={model.id}
+          className="flex items-center gap-2 cursor-pointer"
+        >
+          <div className="relative w-4 h-4 flex items-center justify-center">
+            <input
+              type="radio"
+              name="model"
+              value={model.id}
+              checked={selectedModel === model.id}
+              onChange={(e) => onModelChange(e.target.value as ModelType)}
+              className="appearance-none w-4 h-4 rounded-full border border-gray-300 checked:border-rose-400 cursor-pointer"
+            />
+            <div
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none ${
+                selectedModel === model.id ? "block" : "hidden"
+              }`}
+            >
+              <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+            </div>
+          </div>
+          <span>{model.name}</span>
         </label>
       ))}
     </div>

@@ -16,11 +16,11 @@ function App() {
       <div className="fixed top-0 w-full bg-white z-10">
         {/* Centered Content Container */}
         <div className="mx-auto max-w-4xl w-full flex justify-center items-center py-4">
-          <h1 className="text-2xl font-bold mb-4">
-            <span className="text-3xl font-bold">
+          <h1 className="text-3xl font-bold mb-4">
+            <span className="text-2xl font-bold">
               {currentModel === "deepseek" ? "deep" : "Gemini"}
             </span>
-            EUC
+            <span className=" text-rose-400">EUC</span>
           </h1>
         </div>
       </div>
