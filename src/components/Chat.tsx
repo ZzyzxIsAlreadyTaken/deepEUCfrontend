@@ -112,7 +112,7 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
   return (
     <div className="flex flex-col relative">
       <div className="flex-1 overflow-auto p-4 mb-[140px]">
-        <div className="w-[64rem] mx-auto">
+        <div className="w-full max-w-[64rem] mx-auto">
           {chatHistory.map((message) => (
             <div
               key={message.id}
@@ -123,7 +123,7 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
                   message.isUser
                     ? "bg-rose-200 text-gray-800"
                     : "bg-violet-50 border border-violet-100 text-gray-800"
-                } rounded-lg p-4 shadow max-w-[80%] break-words`}
+                } rounded-lg p-4 shadow w-full sm:max-w-[80%] break-words`}
               >
                 <div className="text-xs opacity-50 mb-1">
                   {new Date(message.timestamp).toLocaleTimeString()} -{" "}
@@ -202,7 +202,7 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
           ))}
           {loading && (
             <div className="my-4">
-              <div className="bg-violet-50 border border-violet-100 text-gray-800 rounded-lg p-4 shadow max-w-[80%]">
+              <div className="bg-violet-50 border border-violet-100 text-gray-800 rounded-lg p-4 shadow w-full sm:max-w-[80%]">
                 <div className="text-xs opacity-50 mb-1">
                   {new Date().toLocaleTimeString()} - {currentModel}
                 </div>
@@ -214,24 +214,25 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
           )}
         </div>
       </div>
-      <div className="fixed bottom-0 left-0 right-0 bg-white">
+      <div className="fixed bottom-0 left-0 right-0 bg-white pt-2">
         <ModelSelector
           selectedModel={currentModel}
           onModelChange={onModelChange}
+          className="md:hidden px-4 mb-2"
         />
         <form
           onSubmit={handleSubmit}
-          className="mx-auto w-[64rem] p-4 flex gap-4"
+          className="mx-auto w-full max-w-[64rem] p-2 flex gap-4"
         >
           <input
-            className="flex-grow p-4 text-lg border border-gray-300 rounded-lg placeholder:text-gray-400"
+            className="flex-grow p-4 text-base sm:text-xl border border-gray-300 rounded-lg placeholder:text-gray-400"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Skriv inn din beskjed..."
           />
           <button
-            className="p-4 text-lg font-semibold text-white bg-rose-400 rounded-lg hover:bg-rose-500 disabled:bg-rose-200 transition-colors duration-200"
+            className="p-4 text-base sm:text-xl font-semibold text-white bg-rose-400 rounded-lg hover:bg-rose-500 disabled:bg-rose-200 transition-colors duration-200 mr-0"
             type="submit"
             disabled={loading}
           >
