@@ -202,7 +202,7 @@ const Chat = ({ onModelChange, currentModel }: ChatProps) => {
           ))}
           {loading && (
             <div className="my-4">
-              <div className="bg-blue-50 border border-blue-200 text-blue-900 rounded-lg p-4 shadow max-w-[80%]">
+              <div className="bg-violet-50 border border-violet-100 text-gray-800 rounded-lg p-4 shadow max-w-[80%]">
                 <div className="text-xs opacity-50 mb-1">
                   {new Date().toLocaleTimeString()} - {currentModel}
                 </div>
